@@ -63,143 +63,86 @@ namespace Codility
             
             if ((i - 1 >= 0) && (j - 1 >= 0) && (i + 1 < mat.Length) && (j + 1 < mat[i].Length))
             {
-                bool i_1j = visited[i - 1][j];
-                bool ij_1 = visited[i][j - 1];
-                bool i1j = visited[i + 1][j];
-                bool ij1 = visited[i][j + 1];
                 min = 1 + Math.Min(
                     Math.Min(CellDistance(i - 1, j, mat, visited), CellDistance(i, j - 1, mat, visited)),
                     Math.Min(CellDistance(i + 1, j, mat, visited), CellDistance(i, j + 1, mat, visited))
                     );
-                visited[i - 1][j] = i_1j;
-                visited[i][j - 1] = ij_1;
-                visited[i + 1][j] = i1j;
-                visited[i][j + 1] = ij1;
                 myMat[i][j] = min;
                 return min;
             }
 
             if ((i - 1 >= 0) && (j - 1 >= 0) && (i + 1 < mat.Length))
             {
-                bool i_1j = visited[i - 1][j];
-                bool ij_1 = visited[i][j - 1];
-                bool i1j = visited[i + 1][j];
                 min = 1 + Math.Min(
                         Math.Min(CellDistance(i - 1, j, mat, visited), CellDistance(i, j - 1, mat, visited)),
                         CellDistance(i + 1, j, mat, visited)
                         );
-
-                visited[i - 1][j] = i_1j;
-                visited[i][j - 1] = ij_1;
-                visited[i + 1][j] = i1j;
                 myMat[i][j] = min;
                 return min;
             }
             if ((i - 1 >= 0) && (j - 1 >= 0) && (j + 1 < mat[i].Length))
             {
-                bool i_1j = visited[i - 1][j];
-                bool ij_1 = visited[i][j - 1];
-                bool ij1 = visited[i][j + 1];
                 min = 1 + Math.Min(
                     Math.Min(CellDistance(i - 1, j, mat, visited), CellDistance(i, j - 1, mat, visited)),
                     CellDistance(i, j + 1, mat, visited)
                     );
-                visited[i - 1][j] = i_1j;
-                visited[i][j - 1] = ij_1;
-                visited[i][j + 1] = ij1;
                 myMat[i][j] = min;
                 return min;
             }
             if ((i - 1 >= 0) && (i + 1 < mat.Length) && (j + 1 < mat[i].Length))
             {
-                bool i_1j = visited[i - 1][j];
-                bool i1j = visited[i + 1][j];
-                bool ij1 = visited[i][j + 1];
                 min = 1 + Math.Min(
                      Math.Min(CellDistance(i - 1, j, mat, visited), CellDistance(i + 1, j, mat, visited)),
                      CellDistance(i, j + 1, mat, visited)
                  );
-                visited[i - 1][j] = i_1j;
-                visited[i + 1][j] = i1j;
-                visited[i][j + 1] = ij1;
                 myMat[i][j] = min;
                 return min;
             }
 
             if ((j - 1 >= 0) && (i + 1 < mat.Length) && (j + 1 < mat[i].Length))
             {
-                bool ij_1 = visited[i][j - 1];
-                bool i1j = visited[i + 1][j];
-                bool ij1 = visited[i][j + 1];
                 min = 1 + Math.Min(
                      Math.Min(CellDistance(i, j - 1, mat, visited), CellDistance(i + 1, j, mat, visited)),
                      CellDistance(i, j + 1, mat, visited)
                      );
-                visited[i][j - 1] = ij_1;
-                visited[i + 1][j] = i1j;
-                visited[i][j + 1] = ij1;
                 myMat[i][j] = min;
                 return min;
             }
             if ((j - 1 >= 0) && (i - 1 >= 0) && (j + 1 < mat[i].Length))
             {
-                bool i_1j = visited[i - 1][j];
-                bool ij_1 = visited[i][j - 1];
-                bool i1j = visited[i + 1][j];
                 min = 1 + Math.Min(
                      Math.Min(CellDistance(i - 1, j, mat, visited), CellDistance(i, j - 1, mat, visited)),
                      CellDistance(i + 1, j, mat, visited)
                      );
-                visited[i - 1][j] = i_1j;
-                visited[i][j - 1] = ij_1;
-                visited[i + 1][j] = i1j;
                 myMat[i][j] = min;
                 return min;
             }
 
             if ((i + 1 < mat.Length) && (i - 1 >= 0) && (j - 1 >= 0))
             {
-                bool i_1j = visited[i - 1][j];
-                bool ij_1 = visited[i][j - 1];
-                bool i1j = visited[i + 1][j];
                 min = 1 + Math.Min(
                      Math.Min(CellDistance(i + 1, j, mat, visited), CellDistance(i - 1, j, mat, visited)),
                      CellDistance(i, j - 1, mat, visited)
                      );
-                visited[i - 1][j] = i_1j;
-                visited[i][j - 1] = ij_1;
-                visited[i + 1][j] = i1j;
                 myMat[i][j] = min;
                 return min;
             }
 
             if ((j + 1 < mat[i].Length) && (i - 1 >= 0) && (i + 1 < mat.Length))
             {
-                bool i_1j = visited[i - 1][j];
-                bool i1j = visited[i + 1][j];
-                bool ij1 = visited[i][j + 1];
                 min = 1 + Math.Min(
                      Math.Min(CellDistance(i, j + 1, mat, visited), CellDistance(i - 1, j, mat, visited)),
                      CellDistance(i + 1, j, mat, visited)
                      );
-                visited[i][j + 1] = ij1;
-                visited[i - 1][j] = i_1j;
-                visited[i + 1][j] = i1j;
                 myMat[i][j] = min;
                 return min;
             }
             if ((j + 1 < mat[i].Length) && (j - 1 >= 0) && (i + 1 < mat.Length))
             {
-                bool ij_1 = visited[i][j - 1];
-                bool i1j = visited[i + 1][j];
-                bool ij1 = visited[i][j + 1];
                 min = 1 + Math.Min(
                      Math.Min(CellDistance(i, j + 1, mat, visited), CellDistance(i, j - 1, mat, visited)),
                      CellDistance(i + 1, j, mat, visited)
                  );
-                visited[i][j + 1] = ij1;
-                visited[i + 1][j] = i1j;
-                visited[i][j - 1] = ij_1;
                 myMat[i][j] = min;
                 return min;
             }
