@@ -79,7 +79,7 @@ namespace OnlineLogicPuns
     //             3,5,4,3
     //         };
 
-    //         long result = Result.taskOfPairing(longer);
+    //         long result = PromotionsResult.taskOfPairing(longer);
     //         ////TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
     //         //TextWriter textWriter = new StreamWriter("test.txt", true);
 
@@ -93,7 +93,7 @@ namespace OnlineLogicPuns
     //         //    freq.Add(freqItem);
     //         //}
 
-    //         //long result = Result.taskOfPairing(freq);
+    //         //long result = PromotionsResult.taskOfPairing(freq);
 
             //textWriter.WriteLine(result);
 

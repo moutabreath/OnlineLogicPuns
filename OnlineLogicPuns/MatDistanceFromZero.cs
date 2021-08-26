@@ -53,100 +53,132 @@ namespace Codility
         private int CellDistance(int i, int j, int[][] mat, bool[][] visited)
         {
             int min = 0;
-            if (visited[i][j])
+            try
             {
-                return myMat[i][j];
-            }
-            visited[i][j] = true;
-            
-            if (mat[i][j] == 0) return 0;
-            
-            if ((i - 1 >= 0) && (j - 1 >= 0) && (i + 1 < mat.Length) && (j + 1 < mat[i].Length))
-            {
-                min = 1 + Math.Min(
-                    Math.Min(CellDistance(i - 1, j, mat, visited), CellDistance(i, j - 1, mat, visited)),
-                    Math.Min(CellDistance(i + 1, j, mat, visited), CellDistance(i, j + 1, mat, visited))
-                    );
-                myMat[i][j] = min;
-                return min;
-            }
+                
+                if (visited[i][j])
+                {
+                    return myMat[i][j];
+                }
 
-            if ((i - 1 >= 0) && (j - 1 >= 0) && (i + 1 < mat.Length))
-            {
-                min = 1 + Math.Min(
+                visited[i][j] = true;
+                if (mat[i][j] == 0) return 0;
+
+                if ((i - 1 >= 0) && (j - 1 >= 0) && (i + 1 < mat.Length) && (j + 1 < mat[i].Length))
+                {
+                    min = 1 + Math.Min(
+                        Math.Min(CellDistance(i - 1, j, mat, visited), CellDistance(i, j - 1, mat, visited)),
+                        Math.Min(CellDistance(i + 1, j, mat, visited), CellDistance(i, j + 1, mat, visited))
+                    );
+                    myMat[i][j] = min;
+                    return min;
+                }
+
+                if ((i - 1 >= 0) && (j - 1 >= 0) && (i + 1 < mat.Length))
+                {
+                    min = 1 + Math.Min(
                         Math.Min(CellDistance(i - 1, j, mat, visited), CellDistance(i, j - 1, mat, visited)),
                         CellDistance(i + 1, j, mat, visited)
-                        );
-                myMat[i][j] = min;
-                return min;
-            }
-            if ((i - 1 >= 0) && (j - 1 >= 0) && (j + 1 < mat[i].Length))
-            {
-                min = 1 + Math.Min(
-                    Math.Min(CellDistance(i - 1, j, mat, visited), CellDistance(i, j - 1, mat, visited)),
-                    CellDistance(i, j + 1, mat, visited)
                     );
+                    myMat[i][j] = min;
+                    return min;
+                }
+                if ((i - 1 >= 0) && (j - 1 >= 0) && (j + 1 < mat[i].Length))
+                {
+                    min = 1 + Math.Min(
+                        Math.Min(CellDistance(i - 1, j, mat, visited), CellDistance(i, j - 1, mat, visited)),
+                        CellDistance(i, j + 1, mat, visited)
+                    );
+                    myMat[i][j] = min;
+                    return min;
+                }
+                if ((i - 1 >= 0) && (i + 1 < mat.Length) && (j + 1 < mat[i].Length))
+                {
+                    min = 1 + Math.Min(
+                        Math.Min(CellDistance(i - 1, j, mat, visited), CellDistance(i + 1, j, mat, visited)),
+                        CellDistance(i, j + 1, mat, visited)
+                    );
+                    myMat[i][j] = min;
+                    return min;
+                }
+                if ((j - 1 >= 0) && (i + 1 < mat.Length) && (j + 1 < mat[i].Length))
+                {
+                    min = 1 + Math.Min(
+                        Math.Min(CellDistance(i, j - 1, mat, visited), CellDistance(i + 1, j, mat, visited)),
+                        CellDistance(i, j + 1, mat, visited)
+                    );
+                    myMat[i][j] = min;
+                    return min;
+                }
+                if ((j - 1 >= 0) && (i - 1 >= 0) && (j + 1 < mat[i].Length))
+                {
+                    min = 1 + Math.Min(
+                        Math.Min(CellDistance(i - 1, j, mat, visited), CellDistance(i, j - 1, mat, visited)),
+                        CellDistance(i + 1, j, mat, visited)
+                    );
+                    myMat[i][j] = min;
+                    return min;
+                }
+                if ((i + 1 < mat.Length) && (i - 1 >= 0) && (j - 1 >= 0))
+                {
+                    min = 1 + Math.Min(
+                        Math.Min(CellDistance(i + 1, j, mat, visited), CellDistance(i - 1, j, mat, visited)),
+                        CellDistance(i, j - 1, mat, visited)
+                    );
+                    myMat[i][j] = min;
+                    return min;
+                }
+                if ((j + 1 < mat[i].Length) && (i - 1 >= 0) && (i + 1 < mat.Length))
+                {
+                    min = 1 + Math.Min(
+                        Math.Min(CellDistance(i, j + 1, mat, visited), CellDistance(i - 1, j, mat, visited)),
+                        CellDistance(i + 1, j, mat, visited)
+                    );
+                    myMat[i][j] = min;
+                    return min;
+                }
+                if ((j + 1 < mat[i].Length) && (j - 1 >= 0) && (i + 1 < mat.Length))
+                {
+                    min = 1 + Math.Min(
+                        Math.Min(CellDistance(i, j + 1, mat, visited), CellDistance(i, j - 1, mat, visited)),
+                        CellDistance(i + 1, j, mat, visited)
+                    );
+                    myMat[i][j] = min;
+                    return min;
+                }
+
+                if ((i - 1 >= 0) && (j - 1 >= 0))
+                {
+                    min = 1 + Math.Min(CellDistance(i - 1, j, mat, visited), CellDistance(i, j - 1, mat, visited));
+                    myMat[i][j] = min;
+                    return min;
+                }
+                if ((i - 1 >= 0) && (j + 1 < mat[i].Length))
+                {
+                    min = 1 + Math.Min(CellDistance(i - 1, j, mat, visited), CellDistance(i, j + 1, mat, visited));
+                    myMat[i][j] = min;
+                    return min;
+                }
+                if ((i + 1 < mat.Length) && (j - 1 >= 0))
+                {
+                    min = 1 + Math.Min(CellDistance(i + 1, j, mat, visited), CellDistance(i, j - 1, mat, visited));
+                    myMat[i][j] = min;
+                    return min;
+                }
+                if ((i + 1 < mat.Length) && (j + 1 < mat[i].Length))
+                {
+                    min = 1 + Math.Min(CellDistance(i + 1, j, mat, visited), CellDistance(i, j + 1, mat, visited));
+                    myMat[i][j] = min;
+                    return min;
+                }
+
                 myMat[i][j] = min;
-                return min;
             }
-            if ((i - 1 >= 0) && (i + 1 < mat.Length) && (j + 1 < mat[i].Length))
+            catch (Exception)
             {
-                min = 1 + Math.Min(
-                     Math.Min(CellDistance(i - 1, j, mat, visited), CellDistance(i + 1, j, mat, visited)),
-                     CellDistance(i, j + 1, mat, visited)
-                 );
-                myMat[i][j] = min;
-                return min;
+
             }
 
-            if ((j - 1 >= 0) && (i + 1 < mat.Length) && (j + 1 < mat[i].Length))
-            {
-                min = 1 + Math.Min(
-                     Math.Min(CellDistance(i, j - 1, mat, visited), CellDistance(i + 1, j, mat, visited)),
-                     CellDistance(i, j + 1, mat, visited)
-                     );
-                myMat[i][j] = min;
-                return min;
-            }
-            if ((j - 1 >= 0) && (i - 1 >= 0) && (j + 1 < mat[i].Length))
-            {
-                min = 1 + Math.Min(
-                     Math.Min(CellDistance(i - 1, j, mat, visited), CellDistance(i, j - 1, mat, visited)),
-                     CellDistance(i + 1, j, mat, visited)
-                     );
-                myMat[i][j] = min;
-                return min;
-            }
-
-            if ((i + 1 < mat.Length) && (i - 1 >= 0) && (j - 1 >= 0))
-            {
-                min = 1 + Math.Min(
-                     Math.Min(CellDistance(i + 1, j, mat, visited), CellDistance(i - 1, j, mat, visited)),
-                     CellDistance(i, j - 1, mat, visited)
-                     );
-                myMat[i][j] = min;
-                return min;
-            }
-
-            if ((j + 1 < mat[i].Length) && (i - 1 >= 0) && (i + 1 < mat.Length))
-            {
-                min = 1 + Math.Min(
-                     Math.Min(CellDistance(i, j + 1, mat, visited), CellDistance(i - 1, j, mat, visited)),
-                     CellDistance(i + 1, j, mat, visited)
-                     );
-                myMat[i][j] = min;
-                return min;
-            }
-            if ((j + 1 < mat[i].Length) && (j - 1 >= 0) && (i + 1 < mat.Length))
-            {
-                min = 1 + Math.Min(
-                     Math.Min(CellDistance(i, j + 1, mat, visited), CellDistance(i, j - 1, mat, visited)),
-                     CellDistance(i + 1, j, mat, visited)
-                 );
-                myMat[i][j] = min;
-                return min;
-            }
-            myMat[i][j] = min;
             return min;
         }
 

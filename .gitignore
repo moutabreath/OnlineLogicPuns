@@ -1,5 +1,6 @@
-.vs/OnlineLogicPuns/v15/.suo
-.vs/OnlineLogicPuns/v15/Server/sqlite3/db.lock
-.vs/OnlineLogicPuns/v15/Server/sqlite3/storage.ide
-.vs/OnlineLogicPuns/v15/Server/sqlite3/storage.ide-shm
-.vs/OnlineLogicPuns/v15/Server/sqlite3/storage.ide-wal
+.vs/*
+OnlineLogicPuns/bin/*
+OnlineLogicPuns/obj/*
+packages/*
+TestLogicPuns/bin/*
+TestLogicPuns/obj/*
