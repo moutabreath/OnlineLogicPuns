@@ -51,12 +51,17 @@
     <Compile Include="MostCommonWord.cs" />
     <Compile Include="Promotions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuickPush.cs" />
     <Compile Include="SelectedItemsPromotions.cs" />
+    <Compile Include="SpiralMatrixCalculation.cs" />
     <Compile Include="StockPrices.cs" />
     <Compile Include="TopKMostFrequent.cs" />
+    <Compile Include="WordAnalysis\TreeWord.cs" />
+    <Compile Include="WordAnalysis\WordAnalyzer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
