@@ -30,5 +30,30 @@ namespace TestLogicPuns
             SpiralMatrixCalculation spiralMatrixCalculation = new SpiralMatrixCalculation();
             spiralMatrixCalculation.CalculateMatrixSum(valueArray, numberOfColumns, numberOfRows);
         }
+
+        [TestMethod]
+        public void TestParenthesis()
+        {
+            string s = "()";
+            Assert.AreEqual(true, BracketMatch.isValid(s));
+            
+            s = "*******(*********";
+            Assert.AreEqual(true, BracketMatch.isValid(s));
+
+            s = "*******(*********))";
+            Assert.AreEqual(true, BracketMatch.isValid(s));
+
+            s = "*******(*****)****";
+            Assert.AreEqual(true, BracketMatch.isValid(s));
+
+            s = "*******(******))***";
+            Assert.AreEqual(true, BracketMatch.isValid(s));
+
+            s = "(*******(*********";
+            Assert.AreEqual(true, BracketMatch.isValid(s));
+
+            s = "(*******(";
+            Assert.AreEqual(false, BracketMatch.isValid(s));
+        }
     }
 }
