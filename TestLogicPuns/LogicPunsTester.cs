@@ -55,5 +55,21 @@ namespace TestLogicPuns
             s = "(*******(";
             Assert.AreEqual(false, BracketMatch.isValid(s));
         }
+
+        [TestMethod]
+        public void TestBinaryGap()
+        {
+            Assert.AreEqual(2, BinaryGap.FindGap(328));
+            Assert.AreEqual(1, BinaryGap.FindGap(20));
+            Assert.AreEqual(2, BinaryGap.FindGap(51712));
+            Assert.AreEqual(3, BinaryGap.FindGap(561892));
+            Assert.AreEqual(9, BinaryGap.FindGap(66561));
+            Assert.AreEqual(20, BinaryGap.FindGap(6291457));
+            Assert.AreEqual(4, BinaryGap.FindGap(74901729));
+            Assert.AreEqual(25, BinaryGap.FindGap(805306373));
+            Assert.AreEqual(5, BinaryGap.FindGap(1376796946));
+            Assert.AreEqual(28, BinaryGap.FindGap(1610612737));
+        }
     }
 }
+

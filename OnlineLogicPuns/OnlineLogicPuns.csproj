@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BinaryGap.cs" />
     <Compile Include="BracketMatch.cs" />
     <Compile Include="EbayDecipher.cs" />
     <Compile Include="Freq.cs" />
