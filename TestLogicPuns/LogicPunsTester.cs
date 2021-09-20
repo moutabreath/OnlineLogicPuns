@@ -70,6 +70,29 @@ namespace TestLogicPuns
             Assert.AreEqual(5, BinaryGap.FindGap(1376796946));
             Assert.AreEqual(28, BinaryGap.FindGap(1610612737));
         }
+
+        [TestMethod]
+        public void TesDeletFiveFromInt()
+        {
+            DeleteFiveFromInt solution = new DeleteFiveFromInt();
+            Assert.AreEqual(1958, solution.solution(15958));
+            Assert.AreEqual(351285, solution.solution(3512585));
+            Assert.AreEqual(-589, solution.solution(-5859));
+            Assert.AreEqual(0, solution.solution(-5000));
+        }
+
+        [TestMethod]
+        public void TesMatZeroDistances()
+        {
+            MatZeroDistances solution = new MatZeroDistances();
+            int[] first = { 0, 0, 0 };
+            int[] second = { 0, 1, 0 };
+            int[] third = { 1, 1, 1 };
+            int[][] mat = new int[][] { first, second, third };
+            int[] resultThird = { 1, 2, 1 };
+
+            Assert.AreEqual(solution.UpdateMatrix(mat), new int[][] { first, second, resultThird });
+        }
     }
 }
 
