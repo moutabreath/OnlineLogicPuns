@@ -2,14 +2,13 @@
 using System.Linq;
 using System.Text;
 
-namespace Codility
+namespace OnlineLogicPuns
 {
     /// <summary>
     /// Given an int N, return largest number if you delete exactly one '5' from the number N
     /// </summary>
     public class DeleteFiveFromInt
     {
-        // write your code in C# 6.0 with .NET 4.5 (Mono)
         public int solution(int N)
         {
             string number = N.ToString();

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace Codility
+namespace OnlineLogicPuns
 {
-    class SmallestIntNotInArray
+    public class SmallestIntNotInArray
     {
         public IDictionary<int, bool> _existingNumbers = new Dictionary<int, bool>();
         public int solution(int[] A)

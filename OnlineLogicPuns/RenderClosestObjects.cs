@@ -1,13 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Codility
+namespace OnlineLogicPuns
 {
-    class RenderClosestObjects
+    public class RenderClosestObjects
     {
+        /***
+         * Simulate computer graphics where the closest objects are being rendered first.
+         * Have D for distances
+         * P for proecssing power
+         * C for cost
+         * Return the max number of objects that can be rendered given distances D, costs C and processing power P.
+         * 
+         * */
         public int solution(int[] D, int[] C, int P)
         {
             Sort(ref D, ref C);
@@ -18,7 +23,7 @@ namespace Codility
         {
             for (int i = 0; i < d.Count(); i++)
             {
-                for (int  j = 0; j < d.Count(); j++)
+                for (int j = 0; j < d.Count(); j++)
                 {
                     if (d[j] < d[i])
                     {
@@ -33,34 +38,14 @@ namespace Codility
             }
         }
 
-        public int SolutionAfterSort(int[] D, int[] C, int P, int i)
+        private int SolutionAfterSort(int[] D, int[] C, int P, int i)
         {
             if (P <= 0 || i >= C.Length)
             {
                 return 0;
             }
             return Math.Max(1 + SolutionAfterSort(D, C, P - C[i], ++i),
-                SolutionAfterSort(D,C, P, ++i));
-
-
-    }
-
-        private void printArray(int[] b)
-        {
-            for (int i = 0; i < b.Length; i++)
-            {
-                Console.Write($"{b[i]},");
-            }
-            Console.WriteLine();
+                SolutionAfterSort(D, C, P, ++i));
         }
-
-        //private static void Main(string[] args)
-        //{
-        //    RenderClosestObjects solution = new RenderClosestObjects();
-        //    int[] A = { 5,11,1,3 };
-        //    int[] B = { 6,1,3,2 };
-        //    solution.solution(A, B, 7);
-
-        //}
     }
 }

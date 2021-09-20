@@ -2,7 +2,7 @@
 using System.IO;
 using System.Linq;
 
-namespace OnlineLogicPuns.WordAnalysis
+namespace OnlineLogicPuns
 {
     public class WordAnalyzer
     {
@@ -16,7 +16,6 @@ namespace OnlineLogicPuns.WordAnalysis
             // Open the file to read from.
             string readText = File.ReadAllText(path);
             char[] delimiterChars = { '\n' };
-
 
             string[] lines = readText.Split(delimiterChars);
             // Iterate over a line

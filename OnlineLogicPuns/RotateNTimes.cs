@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Codility
+namespace OnlineLogicPuns
 {
     class RotateNTimes
     {

@@ -1,4 +1,4 @@
-﻿namespace OnlineLogicPuns.WordAnalysis
+﻿namespace OnlineLogicPuns
 {
     class TreeWord
     {
