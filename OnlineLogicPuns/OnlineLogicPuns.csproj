@@ -47,15 +47,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Array\MinInteger.cs" />
-    <Compile Include="BinaryGap.cs" />
+    <Compile Include="Integer\BinaryGap.cs" />
     <Compile Include="Strings\BracketMatch.cs" />
     <Compile Include="Matrix\CountriesCount.cs" />
-    <Compile Include="DeleteFiveFromInt.cs" />
-    <Compile Include="Utls\EbayDecipher.cs" />
+    <Compile Include="Integer\DeleteFiveFromInt.cs" />
+    <Compile Include="Utils\EbayDecipher.cs" />
     <Compile Include="Array\MaxConsecutiveOnes.cs" />
     <Compile Include="Strings\PermutationsFinder.cs" />
-    <Compile Include="FindLongestSeq.cs" />
-    <Compile Include="Freq.cs" />
+    <Compile Include="Integer\FindLongestSeq.cs" />
+    <Compile Include="Promotions\Freq.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Matrix\MatDistanceFromZero.cs" />
     <Compile Include="Strings\MostCommonWord.cs" />
