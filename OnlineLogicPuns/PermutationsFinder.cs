@@ -4,7 +4,7 @@ using System.Text;
 
 namespace OnlineLogicPuns
 {
-    public class FindAllPermustations
+    public class PermutationsFinder
     {
         public static List<string> FindAllPermutations(string st, int index)
         {

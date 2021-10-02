@@ -143,7 +143,7 @@ namespace TestLogicPuns
         [TestMethod]
         public void TestFindAllPermustations()
         {
-            List<string> perms = FindAllPermustations.FindAllPermutations("abcd", 0);
+            List<string> perms = PermutationsFinder.FindAllPermutations("abcd", 0);
         }
 
         [TestMethod]
@@ -156,6 +156,53 @@ namespace TestLogicPuns
             }
             array[18] = 21;
             StockPrices.FindMaxStockPrices(array);
+        }
+
+        [TestMethod]
+        public void TestCountCountries()
+        {
+            CountriesCount countriesCount = new CountriesCount();
+            int[][] A = new int[7][];
+            for (int i = 0; i < A.Length; i++)
+            {
+                A[i] = new int[3];
+            }
+            A[0][0] = 5; A[0][1] = 4; A[0][2] = 4;
+            A[1][0] = 4; A[1][1] = 3; A[1][2] = 4;
+            A[2][0] = 3; A[2][1] = 2; A[2][2] = 4;
+            A[3][0] = 2; A[3][1] = 2; A[3][2] = 2;
+            A[4][0] = 3; A[4][1] = 3; A[4][2] = 4;
+            A[5][0] = 1; A[5][1] = 4; A[5][2] = 4;
+            A[6][0] = 4; A[6][1] = 1; A[6][2] = 1;
+            Assert.AreEqual(11, countriesCount.solution(A));
+        }
+
+        [TestMethod]
+        public void TestMaxConsecutiveOnes()
+        {
+            int [] A = { 1, 1, 0, 1, 1, 1 };
+            MaxConsecutiveOnes maxConsecutiveOnes = new MaxConsecutiveOnes();
+            Assert.AreEqual(3, maxConsecutiveOnes.FindMaxConsecutiveOnes(A));
+
+        }
+
+        [TestMethod]
+        public void TestMinInteger()
+        {
+            int[] A = { 1, 3, 6, 4, 1, 2 };
+            MinInteger bigId = new MinInteger();
+            Assert.AreEqual(5, bigId.solution(A));
+
+        }
+
+
+        [TestMethod]
+        public void TestBigId()
+        {
+            int[] A = { 1, 3, 6, 4, 1, 2 };
+            MinInteger bigId = new MinInteger();
+            Assert.AreEqual(5, bigId.solution(A));
+
         }
     }
 }
