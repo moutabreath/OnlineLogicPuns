@@ -46,28 +46,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MinInteger.cs" />
+    <Compile Include="Array\MinInteger.cs" />
     <Compile Include="BinaryGap.cs" />
-    <Compile Include="BracketMatch.cs" />
-    <Compile Include="CountriesCount.cs" />
+    <Compile Include="Strings\BracketMatch.cs" />
+    <Compile Include="Matrix\CountriesCount.cs" />
     <Compile Include="DeleteFiveFromInt.cs" />
-    <Compile Include="EbayDecipher.cs" />
-    <Compile Include="MaxConsecutiveOnes.cs" />
-    <Compile Include="PermutationsFinder.cs" />
+    <Compile Include="Utls\EbayDecipher.cs" />
+    <Compile Include="Array\MaxConsecutiveOnes.cs" />
+    <Compile Include="Strings\PermutationsFinder.cs" />
     <Compile Include="FindLongestSeq.cs" />
     <Compile Include="Freq.cs" />
     <Compile Include="Main.cs" />
-    <Compile Include="MatDistanceFromZero.cs" />
-    <Compile Include="MostCommonWord.cs" />
-    <Compile Include="Promotions.cs" />
+    <Compile Include="Matrix\MatDistanceFromZero.cs" />
+    <Compile Include="Strings\MostCommonWord.cs" />
+    <Compile Include="Promotions\Promotions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RenderClosestObjects.cs" />
-    <Compile Include="RotateNTimes.cs" />
-    <Compile Include="SelectedItemsPromotions.cs" />
-    <Compile Include="SmallestIntNotInArray.cs" />
-    <Compile Include="SpiralMatrixCalculation.cs" />
-    <Compile Include="StockPrices.cs" />
-    <Compile Include="TopKMostFrequent.cs" />
+    <Compile Include="Array\RotateNTimes.cs" />
+    <Compile Include="Promotions\SelectedItemsPromotions.cs" />
+    <Compile Include="Array\SmallestIntNotInArray.cs" />
+    <Compile Include="Matrix\SpiralMatrixCalculation.cs" />
+    <Compile Include="Promotions\StockPrices.cs" />
+    <Compile Include="Array\TopKMostFrequent.cs" />
     <Compile Include="WordAnalysis\TreeWord.cs" />
     <Compile Include="WordAnalysis\WordAnalyzer.cs" />
   </ItemGroup>

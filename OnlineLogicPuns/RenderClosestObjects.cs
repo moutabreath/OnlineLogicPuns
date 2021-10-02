@@ -8,7 +8,7 @@ namespace OnlineLogicPuns
         /***
          * Simulate computer graphics where the closest objects are being rendered first.
          * Have D for distances
-         * P for proecssing power
+         * P for preecssing power
          * C for cost
          * Return the max number of objects that can be rendered given distances D, costs C and processing power P.
          * 
