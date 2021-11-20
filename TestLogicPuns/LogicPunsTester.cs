@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OnlineLogicPuns;
+using System;
 using System.Collections.Generic;
 
 namespace TestLogicPuns
@@ -109,7 +110,7 @@ namespace TestLogicPuns
             RenderClosestObjects renderClosestObjects = new RenderClosestObjects();
             int[] D = { 5, 11, 1, 3 };
             int[] C = { 6, 1, 3, 2 };
-            Assert.AreEqual(2,renderClosestObjects.solution(D, C, 7));
+            Assert.AreEqual(2, renderClosestObjects.solution(D, C, 7));
         }
 
         [TestMethod]
@@ -180,7 +181,7 @@ namespace TestLogicPuns
         [TestMethod]
         public void TestMaxConsecutiveOnes()
         {
-            int [] A = { 1, 1, 0, 1, 1, 1 };
+            int[] A = { 1, 1, 0, 1, 1, 1 };
             MaxConsecutiveOnes maxConsecutiveOnes = new MaxConsecutiveOnes();
             Assert.AreEqual(3, maxConsecutiveOnes.FindMaxConsecutiveOnes(A));
 
@@ -204,6 +205,203 @@ namespace TestLogicPuns
             Assert.AreEqual(5, bigId.solution(A));
 
         }
+
+
+        [TestMethod]
+        public void TestDropbox()
+        {
+            string[][] queries = new string[][]
+{ new [] {"APPEND","Hey"},
+ new []{ "APPEND"," you"},
+ new []{"APPEND",", don't"},
+ new[]{"APPEND"," "},
+ new [] {"APPEND","let me down"}};
+            string[] output = {"Hey",
+ "Hey you",
+ "Hey you, don't",
+ "Hey you, don't ",
+ "Hey you, don't let me down" };
+            ConsoleTextEditor consoleTextEditor = new ConsoleTextEditor();
+            string[] my = consoleTextEditor.textEditor1_2(queries);
+            Assert.AreEqual(output, my);
+
+            queries = new string[][] {
+new[] { "APPEND", "Hey, you!" },
+ new[] { "BACKSPACE" },
+ new[] { "APPEND", "? Impossibel!" },
+ new[] { "BACKSPACE" },
+ new[] { "BACKSPACE" },
+ new[] { "BACKSPACE" },
+ new[] { "APPEND", "le!" }};
+
+            output = new string[]{"Hey, you!",
+ "Hey, you",
+ "Hey, you? Impossibel!",
+ "Hey, you? Impossibel",
+ "Hey, you? Impossibe",
+ "Hey, you? Impossib",
+ "Hey, you? Impossible!"};
+
+            my = consoleTextEditor.textEditor1_2(queries);
+            Assert.AreEqual(output, my);
+        }
     }
 }
 
+/***
+ * 
+queries:
+[["APPEND","Hey, you!"], 
+ ["BACKSPACE"], 
+ ["APPEND","? Impossibel!"], 
+ ["BACKSPACE"], 
+ ["BACKSPACE"], 
+ ["BACKSPACE"], 
+ ["APPEND","le!"]]
+
+Output:
+
+undefined
+
+Expected Output:
+
+["Hey, you!", 
+ "Hey, you", 
+ "Hey, you? Impossibel!", 
+ "Hey, you? Impossibel", 
+ "Hey, you? Impossibe", 
+ "Hey, you? Impossib", 
+ "Hey, you? Impossible!"]
+ ["APPEND","le!"]]
+ * 
+ * 
+ * 
+ * 
+ * 
+ * queries:
+[["APPEND","You'll never find a rainbow if you're looking down"], 
+ ["APPEND",""], 
+ ["MOVE","-10"], 
+ ["APPEND","START. "], 
+ ["MOVE","57"], 
+ ["APPEND","END."]]
+
+Output:
+
+undefined
+
+Expected Output:
+
+["You'll never find a rainbow if you're looking down", 
+ "You'll never find a rainbow if you're looking down", 
+ "You'll never find a rainbow if you're looking down", 
+ "START. You'll never find a rainbow if you're looking down", 
+ "START. You'll never find a rainbow if you're looking down", 
+ "START. You'll never find a rainbow if you're looking downEND."]
+ * 
+ * 
+ * 
+ * 
+ * 
+ * queries:
+[["APPEND","Never give up"], 
+ ["MOVE","12"], 
+ ["APPEND","!"], 
+ ["MOVE","11"], 
+ ["APPEND","!"], 
+ ["MOVE","10"], 
+ ["APPEND","!"], 
+ ["MOVE","9"], 
+ ["APPEND","!"], 
+ ["MOVE","8"], 
+ ["APPEND","!"], 
+ ["MOVE","7"], 
+ ["APPEND","!"], 
+ ["MOVE","6"], 
+ ["APPEND","!"], 
+ ["MOVE","5"], 
+ ["APPEND","!"], 
+ ["MOVE","4"], 
+ ["APPEND","!"], 
+ ["MOVE","3"], 
+ ["APPEND","!"], 
+ ["MOVE","2"], 
+ ["APPEND","!"], 
+ ["MOVE","1"], 
+ ["APPEND","!"]]
+
+Output:
+
+undefined
+
+Expected Output:
+
+["Never give up", 
+ "Never give up", 
+ "Never give u!p", 
+ "Never give u!p", 
+ "Never give !u!p", 
+ "Never give !u!p", 
+ "Never give! !u!p", 
+ "Never give! !u!p", 
+ "Never giv!e! !u!p", 
+ "Never giv!e! !u!p", 
+ "Never gi!v!e! !u!p", 
+ "Never gi!v!e! !u!p", 
+ "Never g!i!v!e! !u!p", 
+ "Never g!i!v!e! !u!p", 
+ "Never !g!i!v!e! !u!p", 
+ "Never !g!i!v!e! !u!p", 
+ "Never! !g!i!v!e! !u!p", 
+ "Never! !g!i!v!e! !u!p", 
+ "Neve!r! !g!i!v!e! !u!p", 
+ "Neve!r! !g!i!v!e! !u!p", 
+ "Nev!e!r! !g!i!v!e! !u!p", 
+ "Nev!e!r! !g!i!v!e! !u!p", 
+ "Ne!v!e!r! !g!i!v!e! !u!p", 
+ "Ne!v!e!r! !g!i!v!e! !u!p", 
+ * 
+ * 
+ * 
+ * 
+ * queries:
+[["CREATE","file1"], 
+ ["CREATE","file2"], 
+ ["SWITCH","file1"], 
+ ["APPEND","Welcome to the content of file1!"], 
+ ["SWITCH","file2"], 
+ ["APPEND","File2 is also here."], 
+ ["CREATE","file3"], 
+ ["APPEND","Hello"], 
+ ["SWITCH","file1"], 
+ ["APPEND","How do you do?"], 
+ ["MOVE","3"], 
+ ["BACKSPACE"], 
+ ["SWITCH","file3"], 
+ ["APPEND","Try this one!"], 
+ ["SWITCH","file2"], 
+ ["APPEND","World"], 
+ ["SWITCH","file1"], 
+ ["UNDO"], 
+ ["UNDO"], 
+ ["SWITCH","file2"], 
+ ["UNDO"], 
+ ["UNDO"], 
+ ["SWITCH","file3"], 
+ ["UNDO"], 
+ ["UNDO"], 
+ ["SWITCH","file1"], 
+ ["REDO"], 
+ ["SWITCH","file2"], 
+ ["REDO"], 
+ ["SWITCH","file3"], 
+ ["REDO"]]
+
+Output:
+
+undefined
+
+Expected Output:
+
+["", "", "", "Welcome to the content of file1!", "", "File2 is also here.", "File2 is also here.", "File2 is also here.Hello", "Welcome to the content of file1!", "Welcome to the content of file1!How do you do?", "Welcome to the content of file1!How do you do?", "Wecome to the content of file1!How do you do?", "", "Try this one!", "File2 is also here.Hello", "File2 is also here.HelloWorld", "Wecome to the content of file1!How do you do?", "Welcome to the content of file1!How do you do?", "Welcome to the content of file1!", "File2 is also here.HelloWorld", "File2 is also here.Hello", "File2 is also here.", "Try this one!", "", "", "Welcome to the content of file1
+ */

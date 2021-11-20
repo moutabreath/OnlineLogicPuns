@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Array\MinInteger.cs" />
+    <Compile Include="Strings\ConsoleTextEditor.cs" />
     <Compile Include="Integer\BinaryGap.cs" />
     <Compile Include="Strings\BracketMatch.cs" />
     <Compile Include="Matrix\CountriesCount.cs" />

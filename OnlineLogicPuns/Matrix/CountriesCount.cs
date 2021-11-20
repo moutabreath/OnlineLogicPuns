@@ -46,7 +46,19 @@ namespace OnlineLogicPuns
             if ((row == A.Length - 1) && (column == A[0].Length - 1)){
                 return 0;
             }
-            
+
+            if (column < A[0].Length - 1)
+            {
+                if (A[row][column] == A[row][column + 1])
+                {
+                    return CountCountries(A, row, column + 1);
+                }
+                else
+                {
+                    return 1 + CountCountries(A, row, column + 1);
+                }
+            }
+
             if (row < A.Length - 1)
             {
                 if (A[row][column] == A[row + 1][column])
@@ -58,57 +70,8 @@ namespace OnlineLogicPuns
                     return 1 + CountCountries(A, row + 1, column);
                 }
             }
-            if (column < A[0].Length - 1)
-            {
-                if (A[row][column] == A[row][column +1]){
-                    return CountCountries(A, row, column + 1);
-                }
-                else
-                {
-                    return 1 + CountCountries(A, row, column +1 );
-                }
-            }
-            return 0;
-            
+          
+            return 0;            
         }
     }
-
-    /**
-     *   int countriesCount = 0;
-            if (row >= 1)
-            {
-                if (A[row][column] != A[row - 1][column])
-                {
-                    countriesCount = 1;
-                }
-            }
-            else
-            {
-                if (column >= 1)
-                {
-                    if (A[row][column] != A[row][column - 1])
-                    {
-                        countriesCount = 1;
-                    }
-                }
-            }
-            if (row == A.Length && column == A[0].Length)
-            {
-                return countriesCount;
-            }
-            int newRow = row + 1;
-            int newColumn = column + 1;
-            if (row + 1 >= A.Length)
-            {
-                newRow = 0;
-            }
-            if (column + 1 >= A[0].Length)
-            {
-                newColumn = 0;
-            }
-            int newRowCalc = countriesCount + CountCountries(A, row, newColumn);
-            int newColCalc = countriesCount + CountCountries(A, newRow, column);
-
-            return Math.Max(newRowCalc, newColCalc);                
-     */
 }
