@@ -208,7 +208,7 @@ namespace TestLogicPuns
 
 
         [TestMethod]
-        public void TestDropbox()
+        public void TestConsoleTextEditor()
         {
             string[][] queries = new string[][]
 { new [] {"APPEND","Hey"},
