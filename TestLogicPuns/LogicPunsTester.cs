@@ -196,7 +196,6 @@ namespace TestLogicPuns
 
         }
 
-
         [TestMethod]
         public void TestBigId()
         {
@@ -206,48 +205,35 @@ namespace TestLogicPuns
 
         }
 
-
         [TestMethod]
         public void TestConsoleTextEditor()
         {
             string[][] queries = new string[][]
-{ new [] {"APPEND","Hey"},
- new []{ "APPEND"," you"},
- new []{"APPEND",", don't"},
- new[]{"APPEND"," "},
- new [] {"APPEND","let me down"}};
-            string[] output = {"Hey",
- "Hey you",
- "Hey you, don't",
- "Hey you, don't ",
- "Hey you, don't let me down" };
+                                { new [] {"APPEND","Hey"},
+                                    new []{ "APPEND"," you"},
+                                    new []{"APPEND",", don't"},
+                                    new[]{"APPEND"," "},
+                                    new [] {"APPEND","let me down"}};
+            string[] output = { "Hey", "Hey you", "Hey you, don't", "Hey you, don't ", "Hey you, don't let me down" };
             ConsoleTextEditor consoleTextEditor = new ConsoleTextEditor();
             string[] my = consoleTextEditor.textEditor1_2(queries);
             Assert.AreEqual(output, my);
 
             queries = new string[][] {
-new[] { "APPEND", "Hey, you!" },
- new[] { "BACKSPACE" },
- new[] { "APPEND", "? Impossibel!" },
- new[] { "BACKSPACE" },
- new[] { "BACKSPACE" },
- new[] { "BACKSPACE" },
- new[] { "APPEND", "le!" }};
-
-            output = new string[]{"Hey, you!",
- "Hey, you",
- "Hey, you? Impossibel!",
- "Hey, you? Impossibel",
- "Hey, you? Impossibe",
- "Hey, you? Impossib",
- "Hey, you? Impossible!"};
-
+                        new[] { "APPEND", "Hey, you!" },
+                        new[] { "BACKSPACE" },
+                        new[] { "APPEND", "? Impossibel!" },
+                        new[] { "BACKSPACE" },
+                        new[] { "BACKSPACE" },
+                        new[] { "BACKSPACE" },
+                        new[] { "APPEND", "le!" }};
+            output = new string[] { "Hey, you!", "Hey, you", "Hey, you? Impossible!", "Hey, you? Impossibe", "Hey, you? Impossible", "Hey, you? Impossib", "Hey, you? Impossible!" };
             my = consoleTextEditor.textEditor1_2(queries);
             Assert.AreEqual(output, my);
         }
+
     }
 }
-
 /***
  * 
 queries:
