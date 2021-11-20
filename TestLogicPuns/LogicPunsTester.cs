@@ -76,10 +76,11 @@ namespace TestLogicPuns
         public void TestDeletFiveFromInt()
         {
             DeleteFiveFromInt solution = new DeleteFiveFromInt();
-            Assert.AreEqual(1958, solution.solution(15958));
-            Assert.AreEqual(351285, solution.solution(3512585));
-            Assert.AreEqual(-589, solution.solution(-5859));
-            Assert.AreEqual(0, solution.solution(-5000));
+            //Assert.AreEqual(1958, solution.solution(15958));
+            //Assert.AreEqual(351285, solution.solution(3512585));
+            //Assert.AreEqual(-589, solution.solution(-5859));
+            //Assert.AreEqual(0, solution.solution(-5000));
+            Assert.AreEqual(-9873, solution.solution(-59873));
         }
 
         [TestMethod]
@@ -232,6 +233,11 @@ namespace TestLogicPuns
             Assert.AreEqual(output, my);
         }
 
+
+        [TestMethod]
+        public void TestNewbie()
+        {
+        }
     }
 }
 /***

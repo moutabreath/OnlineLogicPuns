@@ -44,10 +44,10 @@ namespace OnlineLogicPuns
                     return solution(N, true, ++index, currentNumber.Append(currentDigit), maxFiveIndex);
                 }
                 if (index == maxFiveIndex)
-                {
-                    index++;
+                {                    
                     while (currentNumber.Length < N.Count() - 1 )
                     {
+                        index++;
                         currentNumber.Append(N[index]);
                     }
                     int temp;
