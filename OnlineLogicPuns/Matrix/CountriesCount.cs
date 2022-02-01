@@ -18,7 +18,7 @@ namespace OnlineLogicPuns
     A[3][0] = 2    A[3][1] = 2    A[3][2] = 2
     A[4][0] = 3    A[4][1] = 3    A[4][2] = 4
     A[5][0] = 1    A[5][1] = 4    A[5][2] = 4
-
+     Note that A[1][0] and A[0][1] have the same color but are not bordering so they are not the same country
     Write an efficient algorithm for the following assumptions:
         N and M are integers within the range [1..300,000];
         the number of elements in matrix A is within the range [1..300,000];
@@ -26,7 +26,6 @@ namespace OnlineLogicPuns
      */
     public class CountriesCount
     {
-        int max = 0;
         bool[][] visited;
         public int solution(int[][] A)
         {
@@ -55,8 +54,20 @@ namespace OnlineLogicPuns
                 }
                 else
                 {
-                    return 1 + CountCountries(A, row, column + 1);
+                    if (row < A.Length - 1)
+                    {
+                        if (A[row][column] == A[row + 1][column])
+                        {
+                            return CountCountries(A, row + 1, column);
+                        }
+                        else
+                        {
+                            return 1 + CountCountries(A, row + 1, column);
+                        }
+                    }
                 }
+
+                return 1 + CountCountries(A, row, column + 1);
             }
 
             if (row < A.Length - 1)
@@ -67,7 +78,17 @@ namespace OnlineLogicPuns
                 }
                 else
                 {
-                    return 1 + CountCountries(A, row + 1, column);
+                    if (column < A[0].Length - 1)
+                    {
+                        if (A[row][column] == A[row][column + 1])
+                        {
+                            return CountCountries(A, row, column + 1);
+                        }
+                        else
+                        {
+                            return 1 + CountCountries(A, row, column + 1);
+                        }
+                    }
                 }
             }
           
